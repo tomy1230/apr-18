@@ -16,7 +16,7 @@ ssh.connect(router_ip,
 # Run commands
 
 
-commands = ['configure terminal','hostname NewRouter','ssh_stdin, ssh_stdout, ssh_stderr = ssh.exec_command','copy running-config startup-config']
+commands = ['configure terminal','hostname NewRouter','copy running-config startup-config']
 for command in commands:
     ssh_stdin, ssh_stdout, ssh_stderr = ssh.exec_command(command)
     error = ssh_stderr.readlines()
